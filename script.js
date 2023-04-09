@@ -2,14 +2,20 @@ let qtdcartas = prompt("Com quantas cartas você quer jogar?")
 let Pcarta
 let Scarta
 let contviradas = 0
-let jogadas
-let gifs = ["./imagens/bobrossparrot.gif","./imagens/bobrossparrot.gif","./imagens/explodyparrot.gif","./imagens/explodyparrot.gif",
-"./imagens/fiestaparrot.gif","./imagens/fiestaparrot.gif","./imagens/metalparrot.gif","./imagens/metalparrot.gif","./imagens/revertitparrot.gif","./imagens/revertitparrot.gif"
-,"./imagens/tripletsparrot.gif","./imagens/tripletsparrot.gif","./imagens/unicornparrot.gif","./imagens/unicornparrot.gif"]
+let jogadas = 0
+let gifs = ["<img src='./imagens/bobrossparrot.gif'>","<img src='./imagens/bobrossparrot.gif'>",
+"<img src='./imagens/explodyparrot.gif'>","<img src='./imagens/explodyparrot.gif'>",
+"<img src='./imagens/fiestaparrot.gif'>","<img src='./imagens/fiestaparrot.gif'>",
+"<img src='./imagens/metalparrot.gif'>","<img src='./imagens/metalparrot.gif'>",
+"<img src='./imagens/revertitparrot.gif'>","<img src='./imagens/revertitparrot.gif'>",
+"<img src='./imagens/tripletsparrot.gif'>","<img src='./imagens/tripletsparrot.gif'>",
+"<img src='./imagens/unicornparrot.gif'>","<img src='./imagens/unicornparrot.gif'>"]
 
 while(qtdcartas > 14 || qtdcartas < 4 || qtdcartas%2 == 1){
     qtdcartas = prompt("Atenção! O número de cartas deve ser um numero par e estar entre 4 e 14!")
 }
+
+embaralhar = gifs.slice(0,qtdcartas)
 
 const cardList = document.querySelector('ul')
 for(let i = 0 ; i < qtdcartas ; i++){
