@@ -39,6 +39,9 @@ body{
 .back-face {
     transform: rotateY(180deg);
 }
+.back-faceS {
+    transform: rotateY(180deg);
+}
 .front {
     transform: rotateY(-180deg);
   }

@@ -3,6 +3,7 @@ let Pcarta
 let Scarta
 let contviradas = 0
 let jogadas = 0
+let contacertos = 0
 let gifs = ["<img src='./imagens/bobrossparrot.gif'>","<img src='./imagens/bobrossparrot.gif'>",
 "<img src='./imagens/explodyparrot.gif'>","<img src='./imagens/explodyparrot.gif'>",
 "<img src='./imagens/fiestaparrot.gif'>","<img src='./imagens/fiestaparrot.gif'>",
@@ -16,12 +17,18 @@ while(qtdcartas > 14 || qtdcartas < 4 || qtdcartas%2 == 1){
 }
 
 embaralhar = gifs.slice(0,qtdcartas);
-alert(embaralhar);
 embaralhar.sort(comparador);
-alert(embaralhar);
+
 const cardList = document.querySelector('ul')
+
 for(let i = 0 ; i < qtdcartas ; i++){
-    cardList.innerHTML += "<li><div onclick='virar(this)' class='card'><div class='front-face face'><img src='./imagens/back.png'></div><div class='back-face face'></div></div></li>"
+    cardList.innerHTML += "<li><div onclick='virar(this)' class='card'><div class='front-face face'><img src='./imagens/back.png'></div><div class='back-face face simg'></div></div></li>"
+}
+
+for(let j = 0 ; j < 14 ; j++){
+    adicionarimg = document.querySelectorAll(".simg");
+    adicionarimg[j].innerHTML = embaralhar[j];
+
 }
 function virar(p){
     if(contviradas==0){
@@ -41,10 +48,7 @@ function virar(p){
         contviradas++
         jogadas++
         Scarta = p;
-    }
-    if(contviradas == 2){
-        contviradas++
-        setTimeout(reset,1000);
+        check();
     }
 }
 function reset(){
@@ -57,7 +61,20 @@ function reset(){
     carta2 = Scarta.querySelector(".back-face");
     carta2.classList.toggle("back");
     contviradas = 0
+    Pcarta,Scarta = null
 }
 function comparador() { 
 	return Math.random() - 0.5; 
+}
+function check(){
+    console.log(Pcarta);
+    console.log(Scarta);
+    if(Pcarta == Scarta){
+        contacertos+=2
+        contviradas=0
+        alert("acertou");
+    }
+    else{
+        setTimeout(reset,1000);
+    }
 }
