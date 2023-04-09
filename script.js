@@ -22,11 +22,11 @@ embaralhar.sort(comparador);
 const cardList = document.querySelector('ul')
 
 for(let i = 0 ; i < qtdcartas ; i++){
-    cardList.innerHTML += "<li><div onclick='virar(this)' class='card'><div class='front-face face'><img src='./imagens/back.png'></div><div class='back-face face simg'></div></div></li>"
+    cardList.innerHTML += "<li><div onclick='virar(this)' class='card'><div class='front-face face'><img src='./imagens/back.png'></div><div class='back-face face'></div></div></li>"
 }
 
-for(let j = 0 ; j < 14 ; j++){
-    adicionarimg = document.querySelectorAll(".simg");
+for(let j = 0 ; j < qtdcartas ; j++){
+    adicionarimg = document.querySelectorAll(".back-face");
     adicionarimg[j].innerHTML = embaralhar[j];
 
 }
@@ -48,7 +48,7 @@ function virar(p){
         contviradas++
         jogadas++
         Scarta = p;
-        check();
+        setTimeout(check,500);
     }
 }
 function reset(){
@@ -61,18 +61,17 @@ function reset(){
     carta2 = Scarta.querySelector(".back-face");
     carta2.classList.toggle("back");
     contviradas = 0
-    Pcarta,Scarta = null
 }
 function comparador() { 
 	return Math.random() - 0.5; 
 }
 function check(){
-    console.log(Pcarta);
-    console.log(Scarta);
-    if(Pcarta == Scarta){
+    Phtml= Pcarta.innerHTML;
+    Shtml= Scarta.innerHTML;
+    if(Phtml == Shtml){
         contacertos+=2
         contviradas=0
-        alert("acertou");
+        alert("Parabéns, você acertou");
     }
     else{
         setTimeout(reset,1000);
