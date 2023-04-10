@@ -6,13 +6,13 @@ let contviradas = 0
 let jogadas = 0
 let contacertos = 0
 let gifs = [
-"<img class='parrot' data-test='face-down-image' src='./imagens/bobrossparrot.gif'>", "<img class='parrot' data-test='face-down-image' src='./imagens/bobrossparrot.gif'>",
-"<img class='parrot' data-test='face-down-image' src='./imagens/explodyparrot.gif'>", "<img class='parrot' data-test='face-down-image' src='./imagens/explodyparrot.gif'>",
-"<img class='parrot' data-test='face-down-image' src='./imagens/fiestaparrot.gif'>",  "<img class='parrot' data-test='face-down-image' src='./imagens/fiestaparrot.gif'>",
-"<img class='parrot' data-test='face-down-image' src='./imagens/metalparrot.gif'>",   "<img class='parrot' data-test='face-down-image' src='./imagens/metalparrot.gif'>",
-"<img class='parrot' data-test='face-down-image' src='./imagens/revertitparrot.gif'>","<img class='parrot' data-test='face-down-image' src='./imagens/revertitparrot.gif'>",
-"<img class='parrot' data-test='face-down-image' src='./imagens/tripletsparrot.gif'>","<img class='parrot' data-test='face-down-image' src='./imagens/tripletsparrot.gif'>",
-"<img class='parrot' data-test='face-down-image' src='./imagens/unicornparrot.gif'>", "<img class='parrot' data-test='face-down-image' src='./imagens/unicornparrot.gif'>"]
+"<img class='parrot' data-test='face-up-image' src='./imagens/bobrossparrot.gif'>", "<img class='parrot' data-test='face-up-image' src='./imagens/bobrossparrot.gif'>",
+"<img class='parrot' data-test='face-up-image' src='./imagens/explodyparrot.gif'>", "<img class='parrot' data-test='face-up-image' src='./imagens/explodyparrot.gif'>",
+"<img class='parrot' data-test='face-up-image' src='./imagens/fiestaparrot.gif'>",  "<img class='parrot' data-test='face-up-image' src='./imagens/fiestaparrot.gif'>",
+"<img class='parrot' data-test='face-up-image' src='./imagens/metalparrot.gif'>",   "<img class='parrot' data-test='face-up-image' src='./imagens/metalparrot.gif'>",
+"<img class='parrot' data-test='face-up-image' src='./imagens/revertitparrot.gif'>","<img class='parrot' data-test='face-up-image' src='./imagens/revertitparrot.gif'>",
+"<img class='parrot' data-test='face-up-image' src='./imagens/tripletsparrot.gif'>","<img class='parrot' data-test='face-up-image' src='./imagens/tripletsparrot.gif'>",
+"<img class='parrot' data-test='face-up-image' src='./imagens/unicornparrot.gif'>", "<img class='parrot' data-test='face-up-image' src='./imagens/unicornparrot.gif'>"]
 
 while(qtdcartas > 14 || qtdcartas < 4 || qtdcartas%2 == 1){
     qtdcartas = prompt("Atenção! O número de cartas deve ser um numero par e estar entre 4 e 14!")
