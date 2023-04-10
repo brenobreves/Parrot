@@ -89,7 +89,6 @@ function check(){
         Scarta.classList.add('found');
         contacertos+=2
         contviradas=0
-        alert("Parabéns, você acertou");
     }
     else{
         setTimeout(reset,1000);
