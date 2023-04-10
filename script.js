@@ -1,5 +1,6 @@
 let qtdcartas = prompt("Com quantas cartas você quer jogar?")
 let Pcarta
+let seg = 0
 let Scarta
 let contviradas = 0
 let jogadas = 0
@@ -16,7 +17,7 @@ let gifs = [
 while(qtdcartas > 14 || qtdcartas < 4 || qtdcartas%2 == 1){
     qtdcartas = prompt("Atenção! O número de cartas deve ser um numero par e estar entre 4 e 14!")
 }
-
+const meuInterval = setInterval(timer,1000);
 embaralhar = gifs.slice(0,qtdcartas);
 embaralhar.sort(comparador);
 
@@ -94,6 +95,19 @@ function check(){
         setTimeout(reset,1000);
     }
     if(contacertos == qtdcartas){
-        alert("Você ganhou em "+ jogadas +" jogadas!")
+        clearInterval(meuInterval);
+        alert("Você ganhou em "+ jogadas +" jogadas! A duração do jogo foi de "+ seg +" segundos!");
+        let continuar = prompt("Você gostaria de reiniciar a partida, responda apenas com 'sim' ou 'não'.")
+        while(continuar != 'sim' && continuar != 'não'){
+            continuar = prompt("Você gostaria de reiniciar a partida, responda APENAS COM 'sim' ou 'não'.")
+        }
+        if(continuar == 'sim'){
+            location.reload();
+        }
     }
+}
+function timer(){
+    seg++
+    p = document.querySelector('.timer');
+    p.innerHTML = seg;
 }
