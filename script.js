@@ -41,9 +41,6 @@ function virar(p){
         carta1.classList.toggle("front");
         carta2 = p.querySelector(".back-face");
         carta2.classList.toggle("back");
-        imagem = p.querySelector('.parrot');
-        imagem.removeAttribute('data-test');
-        imagem.setAttribute('data-test','face-up-image');
         contviradas++
         jogadas++
         Pcarta = p;
@@ -53,9 +50,6 @@ function virar(p){
         carta1.classList.toggle("front");
         carta2 = p.querySelector(".back-face");
         carta2.classList.toggle("back");
-        imagem = p.querySelector('.parrot');
-        imagem.removeAttribute('data-test');
-        imagem.setAttribute('data-test','face-up-image');
         contviradas++
         jogadas++
         Scarta = p;
@@ -73,10 +67,6 @@ function reset(){
     carta2.classList.toggle("back");
     Pimg = Pcarta.querySelector('.parrot');
     Simg = Scarta.querySelector('.parrot');
-    Pimg.removeAttribute('data-test');
-    Simg.removeAttribute('data-test');
-    Pimg.setAttribute('data-test' , 'face-down-image');
-    Simg.setAttribute('data-test' , 'face-down-image');
     contviradas = 0
 }
 function comparador() { 
@@ -97,9 +87,9 @@ function check(){
     if(contacertos == qtdcartas){
         clearInterval(meuInterval);
         alert("Você ganhou em "+ jogadas +" jogadas! A duração do jogo foi de "+ seg +" segundos!");
-        let continuar = prompt("Você gostaria de reiniciar a partida, responda apenas com 'sim' ou 'não'.")
+        let continuar = prompt("Você gostaria de reiniciar a partida? (sim ou não)")
         while(continuar != 'sim' && continuar != 'não'){
-            continuar = prompt("Você gostaria de reiniciar a partida, responda APENAS COM 'sim' ou 'não'.")
+            continuar = prompt("Você gostaria de reiniciar a partida? (sim ou não)")
         }
         if(continuar == 'sim'){
             location.reload();
