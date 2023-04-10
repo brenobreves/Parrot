@@ -24,7 +24,7 @@ embaralhar.sort(comparador);
 const cardList = document.querySelector('ul')
 
 for(let i = 0 ; i < qtdcartas ; i++){
-    cardList.innerHTML += "<li><div onclick='virar(this)' data-test='card' class='card'><div class='front-face face'><img src='./imagens/back.png'></div><div class='back-face face'></div></div></li>"
+    cardList.innerHTML += "<li><div onclick='virar(this)' data-test='card' class='card'><div class='front-face face'><img data-test='face-down-image' src='./imagens/back.png'></div><div class='back-face face'></div></div></li>"
 }
 
 for(let j = 0 ; j < qtdcartas ; j++){
